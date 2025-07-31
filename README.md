@@ -36,12 +36,16 @@ pip install networkx numpy scikit-learn nltk
 
 ```
 Hindi-Text-Summarizer-using-TextRank-Algorithm-main/
+├── app.py                       # Flask web application
+├── run_webapp.py                # Web app startup script
 ├── summarizer_fixed.py          # Main summarization script
 ├── summarizer.py                # Original summarizer implementation
 ├── hindi_tokenizer1.py          # Hindi text tokenization utilities
 ├── mainEval.py                  # Original evaluation script (Windows-specific)
 ├── mainEval_fixed.py            # Fixed evaluation script (cross-platform)
 ├── stopwords.txt                # Hindi stopwords list
+├── templates/
+│   └── index.html               # Web interface template
 ├── IO/
 │   ├── input/                   # Input text files (input1.txt to input10.txt)
 │   ├── machine_output/          # Generated summaries
@@ -51,7 +55,24 @@ Hindi-Text-Summarizer-using-TextRank-Algorithm-main/
 
 ## 🎯 Usage
 
-### Basic Usage
+### Web Interface (Recommended)
+
+Start the beautiful web interface:
+
+```bash
+python3 run_webapp.py
+```
+
+Then open your browser and go to: **http://localhost:5001**
+
+Features:
+- ✨ Beautiful, modern UI with gradient design
+- 📝 Direct text input or file upload
+- 📊 Real-time statistics (word count, compression ratio)
+- 📱 Responsive design for mobile devices
+- ⚡ Fast processing with loading animations
+
+### Command Line Usage
 
 Run the main summarizer to process all input files:
 
