@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hindi Text Summarizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -19,6 +22,11 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+        }
+
+        .decorative-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
         }
 
         .container {
@@ -43,6 +51,15 @@
             background: linear-gradient(90deg, #667eea, #764ba2);
         }
 
+        .container::after {
+            content: '✨';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
         .header {
             text-align: center;
             margin-bottom: 30px;
@@ -51,10 +68,23 @@
         .title {
             font-size: 2.5rem;
             font-weight: 700;
+            font-family: 'Playfair Display', serif;
             background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
+            position: relative;
+        }
+
+        .title::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
         }
 
         .subtitle {
@@ -128,6 +158,17 @@
             transition: all 0.3s ease;
             width: 100%;
             margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::before {
+            content: '📝';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
         }
 
         .button:hover {
@@ -188,6 +229,17 @@
             font-size: 16px;
             line-height: 1.6;
             color: #333;
+            position: relative;
+        }
+
+        .summary-text::before {
+            content: '💡';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            font-size: 20px;
         }
 
         .loading {
@@ -248,14 +300,14 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="title">हिंदी टेक्स्ट समरीज़र</h1>
+            <h1 class="title">Hindi Text Summarizer</h1>
             <p class="subtitle">AI-powered Hindi text summarization using TextRank algorithm</p>
         </div>
 
         <div class="input-section">
             <div class="input-group">
                 <label class="label">Enter Hindi Text:</label>
-                <textarea id="textInput" class="text-input" placeholder="यहाँ अपना हिंदी टेक्स्ट पेस्ट करें..."></textarea>
+                <textarea id="textInput" class="text-input" placeholder="Paste your Hindi text here..."></textarea>
             </div>
 
             <div class="input-group">
